@@ -1,0 +1,256 @@
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #808080, #dcdcdc); /* Fondo de degradado gris invertido */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos del encabezado y la barra de navegación */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 30px;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-header {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-header .logo {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.navbar-header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logout-button {
+    background-color: #ff4d4f;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #e63e41;
+}
+
+/* Estilos del contenido principal del perfil */
+.profile-main {
+    display: flex;
+    flex-grow: 1;
+    min-height: calc(100vh - 60px);
+    padding-top: 80px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-section {
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-card {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    color: #000;
+    display: flex;
+    gap: 30px;
+}
+
+/* Estilos de la columna de información del alumno */
+.profile-info-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-photo-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.student-info h2 {
+    color: #000; /* Color de texto oscuro para el título */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.student-info p {
+    color: #000; /* Color de texto oscuro para la información */
+    font-size: 1rem;
+    margin: 5px 0;
+    text-align: left;
+}
+
+/* Estilos de la columna de horarios */
+.schedule-column {
+    flex: 2;
+    text-align: center;
+}
+
+.schedule-column h2 {
+    color: #000; /* Color de texto oscuro para el título */
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro transparente */
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.schedule-table th, .schedule-table td {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.schedule-table th {
+    background-color: rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+}
+
+.schedule-table td {
+    font-size: 0.9rem;
+    height: 60px;
+    vertical-align: middle;
+}
+
+.schedule-table .empty {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.schedule-table .class-cell {
+    background-color: rgba(200, 255, 200, 0.1);
+    color: #00ff00;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.schedule-table small {
+    display: block;
+    font-size: 0.75rem;
+    color: #fff;
+    font-weight: normal;
+}
+
+/* Estilos del footer */
+.main-footer {
+    background-color: white;
+    width: 100%;
+    padding: 40px 20px;
+}
+
+.main-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-footer .row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-footer .col-sm-4 {
+    flex: 1;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.main-footer .footer-logo {
+    height: 156px;
+}
+
+/* Media Queries para diseño responsivo */
+@media (max-width: 992px) {
+    .profile-card {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .profile-info-column, .schedule-column {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-section {
+        padding: 10px;
+    }
+
+    .profile-card {
+        padding: 15px;
+    }
+
+    .profile-photo-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .main-footer .footer-logo {
+        height: 104px;
+    }
+}
+
+@media (max-width: 500px) {
+    .main-footer .footer-logo {
+        height: 78px;
+    }
+}

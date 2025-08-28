@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDCORE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="edcore.png">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="navbar-container">
+                <div class="navbar-header">
+                    <a href="#">
+                        <img src="logo.png" alt="Logo Edcore" class="logo">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="info-section">
+            <div class="info-box">
+                <h2>Bienvenido!</h2>
+                <p>La plataforma edcore es el sistema de gestión escolar que integra a los 13 Campus de la Red del TecMM del Estado de Jalisco, siendo una de las redes más grandes de México.</p>
+            </div>
+        </section>
+
+        <section class="login-section">
+            <div class="login-box">
+                <div class="login-header">
+                    <img src="edcore.png" alt="Logo Edcore" class="logo">
+                    <h3>SISTEMA EDCORE</h3>
+                </div>
+                <h4>Plataforma Alumnos</h4>
+                <form action="#" onsubmit="return validarContrasena()">
+                    <div class="input-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" placeholder="">
+                    </div>
+                    <button type="submit" class="login-button">Iniciar sesión</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <br><br><br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <p style="text-align: center">
+                        <img alt="" width="450" src="inovacion.png" />
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <p style="text-align: center">
+                        <img alt="" width="200" src="sep.png" />
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <p style="text-align: center">
+                        <img alt="" width="300" src="tecmm.png" />
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-icon">⚠️</span>
+                <h4>Oops...</h4>
+            </div>
+            <p>[SAFE003]: El password es incorrecto!</p>
+            <button class="modal-button" onclick="cerrarModal()">Aceptar</button>
+        </div>
+    </div>
+
+    <script>
+        function validarContrasena() {
+            var password = document.getElementById("password").value;
+            if (password.length >= 8) {
+                // Redirigir a la nueva página
+                window.location.href = "sesion_iniciada.html";
+                return false; // Evita el envío del formulario
+            } else {
+                document.getElementById("errorModal").style.display = "flex";
+                return false;
+            }
+        }
+
+        function cerrarModal() {
+            document.getElementById("errorModal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
